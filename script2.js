@@ -11,7 +11,7 @@
 
   // Your web app's Firebase configuration
   const firebaseConfig = {
-    apiKey: "AIzaSyCD2oRMtEq1Gn073EhtSWFZFYQhO7xnHkE",
+    apiKey: process.env.API,
     authDomain: "codiooo.firebaseapp.com",
     projectId: "codiooo",
     storageBucket: "codiooo.appspot.com",
