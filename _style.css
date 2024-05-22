@@ -1,0 +1,97 @@
+/* styles.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3b82f6;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+}
+
+.weather-app {
+    background: #4f83cc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+}
+
+.weather-app h1 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.weather-app input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.weather-app p {
+    color: white;
+    margin: 10px 0;
+}
+
+.weather-app button {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3b82f6;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.color-picker {
+    position: absolute;
+    top: 50%;
+    right: -50px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.color {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.red { background-color: #ff0000; }
+.green { background-color: #00ff00; }
+.lime { background-color: #00ff7f; }
+.blue { background-color: #0000ff; }
+.darkblue { background-color: #00008b; }
+.purple { background-color: #800080; }
+.orange { background-color: #ffa500; }
+.yellow { background-color: #ffff00; }
+
+.mode-switch {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.mode-switch .moon {
+    width: 24px;
+    height: 24px;
+    background: url('https://img.icons8.com/ios-filled/50/ffffff/moon-symbol.png') no-repeat center center;
+    background-size: contain;
+}
