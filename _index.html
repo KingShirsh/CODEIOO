@@ -1,38 +1,45 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-    <link rel="stylesheet" href="_style.css">
+    <title>The Weather app</title>
     <script>
-        function changeBackgroundColor(color) {
-            document.body.style.backgroundColor = color;
+        function changeBackgroundColor(color){
+            document.documentElement.style.backgroundColor=color;
+        }
+        function changeBAckground(color){
+            document.body.style.backgroundColor=color;
+
+        }
+        function changeBoxBackgroundColor(color) {
+            document.querySelector('.container').style.backgroundColor = color;
+        }
+
+        function changeAllBackgrounds(color) {
+            changeBackgroundColor(color);
+            changeBAckground(color);
+            changeBoxBackgroundColor(color);
         }
     </script>
+
 </head>
 <body>
+    <link rel="stylesheet" href="_style.css">
     <div class="container">
         <div class="weather-app">
-            <h1>Weather App</h1>
-            <input type="text" placeholder="Enter City Name">
+            <h1><header>WeatherInfo</header></h1>
+            <input type="text" placeholder="Enter the name of the city">
             <p>or</p>
-            <button>Location auto-detect</button>
-        </div>
-        <div class="color-picker">
-            <div class="color red" onclick="changeBackgroundColor('#ff0000')"></div>
-            <div class="color green" onclick="changeBackgroundColor('#00ff00')"></div>
-            <div class="color lime" onclick="changeBackgroundColor('#00ff7f')"></div>
-            <div class="color blue" onclick="changeBackgroundColor('#0000ff')"></div>
-            <div class="color darkblue" onclick="changeBackgroundColor('#00008b')"></div>
-            <div class="color purple" onclick="changeBackgroundColor('#800080')"></div>
-            <div class="color orange" onclick="changeBackgroundColor('#ffa500')"></div>
-            <div class="color yellow" onclick="changeBackgroundColor('#ffff00')"></div>
-        </div>
-        <div class="mode-switch">
-            <i class="moon"></i>
+            <button>Auto Detect Location</button>
         </div>
     </div>
-</body>
-</html>
-
+    <div class="color-palette">
+    <font align="right">
+       <button class="round-button-1" onclick="changeAllBackgrounds('#ff0000')"></button>
+            <button class="round-button-2" onclick="changeAllBackgrounds('#0000ff')"></button>
+            <button class="round-button-3" onclick="changeAllBackgrounds('#00ff00')"></button>
+    </font>
+    </div>

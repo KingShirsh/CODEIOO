@@ -1,26 +1,29 @@
-const autoDetectBtn = document.getElementById('auto-detect-btn');
+const form = document.getElementById("weather-form");
+const cityName = document.getElementById("city-name");
+const weatherData = document.getElementById("weather-data");
 
-autoDetectBtn.addEventListener('click', () => {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(position => {
-      const lat = position.coords.latitude;
-      const lon = position.coords.longitude;
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-      // Use the lat and lon values to fetch the weather data for the user's location
-      // For example, you can use the OpenWeatherMap API to get the weather data
-      // Here's an example of how you can use the fetch API to get the weather data:
+  // Use geolocation API to get user's location
+  navigator.geolocation.getCurrentPosition((position) => {
+    const lat = position.coords.latitude;
+    const lon = position.coords.longitude;
 
-      fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=YOUR_API_KEY`)
-        .then(response => response.json())
-        .then(data => {
-          // Display the weather data for the user's location
-          console.log(data);
-        })
-        .catch(error => {
-          console.error(error);
-        });
-    });
-  } else {
-    alert('Geolocation is not supported by this browser.');
-  }
+    // Use weather API to get weather data
+    const apiKey = "77e05b135c0a30dc25069da4e84796f0";
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        // Display weather data
+        const weatherText = `Weather in ${data.name}: ${data.weather[0].description}\nTemperature: ${data.main.temp}°C`;
+        weatherData.textContent = weatherText;
+      })
+      .catch((error) => {
+        console.error(error);
+        weatherData.textContent = "Error getting weather data.";
+      });
+  });
 });

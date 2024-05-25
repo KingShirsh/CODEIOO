@@ -1,4 +1,5 @@
-/* styles.css */
+
+styles.css
 * {
     box-sizing: border-box;
     margin: 0;
@@ -11,13 +12,16 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #3b82f6;
+    background-color: #4f83cc;
 }
 
 .container {
-    position: relative;
-    text-align: center;
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: flex-end; /* This line aligns buttons to the right */
 }
+
 
 .weather-app {
     background: #4f83cc;
@@ -53,45 +57,104 @@ body, html {
     background-color: #3b82f6;
     color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+  
 }
 
-.color-picker {
-    position: absolute;
-    top: 50%;
-    right: -50px;
-    transform: translateY(-50%);
+.color-palette {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 12px;
+  right: 0;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 30px;
+  padding: 8px;
+  text-align: center;
+}
+
+
+
+
+.round-button-1 {
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-}
+    border-radius: 50%;
+    background-color: #ff0000;
+    color: white;
+    padding: 15px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 20px;
+  }
+  
+.round-button-2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 50%;
+    background-color: #0000ff;
+    color: white;
+    padding: 15px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 20px;
+  }
+      
+.round-button-3 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 50%;
+    background-color:#00ff00;
+    color: white;
+    padding: 15px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 20px;
+    
+  }
 
-.color {
+
+
+  .color-palette {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    margin: 12px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 31px;
+    padding: 10px;
+    text-align: right;
+  }
+  
+  .color-palette .theme-color {
+    background-color: red;
+    border-radius: 50%;
     width: 30px;
     height: 30px;
-    border-radius: 50%;
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.red { background-color: #ff0000; }
-.green { background-color: #00ff00; }
-.lime { background-color: #00ff7f; }
-.blue { background-color: #0000ff; }
-.darkblue { background-color: #00008b; }
-.purple { background-color: #800080; }
-.orange { background-color: #ffa500; }
-.yellow { background-color: #ffff00; }
-
-.mode-switch {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-}
-
-.mode-switch .moon {
-    width: 24px;
-    height: 24px;
-    background: url('https://img.icons8.com/ios-filled/50/ffffff/moon-symbol.png') no-repeat center center;
-    background-size: contain;
-}
+  }
+  
+  .color-palette .theme-color:not(:last-child) {
+    margin-bottom: 10px;
+  }
+      
+  
