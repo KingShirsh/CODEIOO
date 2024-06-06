@@ -3,40 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Details</title>
+    <title>The Weather App</title>
+    <script>
+        function changeBackgroundColor(color) {
+            document.documentElement.style.backgroundColor = color;
+        }
+
+        function changeBAckground(color) {
+            document.body.style.backgroundColor = color;
+        }
+
+        function changeBoxBackgroundColor(color) {
+            document.querySelector('.container').style.backgroundColor = color;
+        }
+
+
+        function changeBox(color){
+            document.querySelector('.weather').style.backgroundColor = color;
+        }
+
+        function changeButton(color){
+            document.querySelector('.weather-app button').style.backgroundColor = color;
+            document.querySelector('.weather-app.location button').style.backgroundColor = color;
+        }
+
+        function change(color){
+
+        }
+
+
+        function changeAllBackgrounds(color) {
+            changeBackgroundColor(color);
+            changeBAckground(color);
+            changeBoxBackgroundColor(color);
+            changeBox(color);
+            changeButton(color);
+        }
+
+    </script>
 </head>
 <body>
     <link rel="stylesheet" href="__style.css">
-    <div class="container">
-        <div class="weather-details">
-            <div>
-                <h1><em><strong>Weahter INfo</strong></em></h1>
-            </div>
-            <hr><br>
-            <div>
-                <p>
-
-                </p>
-            </div>
-            <div class="bottom-details">
-                <div class="column feels">
-                  <i class="bx bxs-thermometer"></i>
-                  <div class="details">
-                    <div class="temp">
-                      <span class="numb-2">_</span>
-                      <span class="deg">°</span>C
-                    </div>
-                    <p>Feels like</p>
-                  </div>
-                </div>
-                <div class="column humidity">
-                  <i class="bx bxs-droplet-half"></i>
-                  <div class="details">
-                    <span>_</span>
+    <div class="weather">
+        <img src="clouds.png" class="weahter-icon" height="150" width="150">
+        <h1 class="temp">22°C</h1>
+        <h2 class="city">New York</h2>
+        <div class="details">
+            <div class="col">
+                <img src="humidity.png" >
+                <div>
+                    <p class="humidity">50%</p>
                     <p>Humidity</p>
-                  </div>
-                </div> 
+                </div>
+            </div>
+            <div class="col">
+                <img src="wind.png">
+                <div>
+                    <p class="wind">15 kmph</p>
+                    <p>wind spedd</p>
+                </div>
+            </div>
         </div>
+              </div>
+       
+       
+
+    <div class="color-palette" style="text-align: right;">
+        <button class="round-button-1" onclick="changeAllBackgrounds('#ff0000')"></button>
+        <button class="round-button-2" onclick="changeAllBackgrounds('#0000ff')"></button>
+        <button class="round-button-3" onclick="changeAllBackgrounds('#00ff00')"></button>
+        <button class="round-button-4" onclick="changeAllBackgrounds('#786')"></button>
+        <button class="round-button-5" onclick="changeAllBackgrounds('#567')"></button>
+        <button class="round-button-6" onclick="changeAllBackgrounds('#000')"></button>
     </div>
+    <div>
+        <button class="Default-Theme" onclick="changeAllBackgrounds('#4f83cc')"></button>
+    </div>
+    <script src="_script.js"></script>
 </body>
 </html>

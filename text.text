@@ -1,0 +1,17 @@
+when anyone enters the name of the city and presses enter then the function executed should give the details of the weather of that city in the console.
+
+
+
+
+function displayWeather(data) {
+  const weatherInfoDiv = document.getElementById('weatherInfo');
+  weatherInfoDiv.innerHTML = `
+    <p>City: ${data.name}</p>
+    <p>Temperature: ${data.main.temp} °C</p>
+    <p>Weather: ${data.weather[0].description}</p>
+    <p>Humidity: ${data.main.humidity}%</p>
+    <p>Wind Speed: ${data.wind.speed} m/s</p>
+  `;
+  document.getElementById('show').style.display = 'none';
+  document.getElementById('weather').style.display = 'flex';
+}

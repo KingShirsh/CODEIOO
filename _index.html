@@ -1,54 +1,124 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Weather app</title>
+    <title>The Weather App</title>
     <script>
-        function changeBackgroundColor(color){
-            document.documentElement.style.backgroundColor=color;
+        function changeBackgroundColor(color) {
+            document.documentElement.style.backgroundColor = color;
         }
-        function changeBAckground(color){
-            document.body.style.backgroundColor=color;
 
+        function changeBAckground(color) {
+            document.body.style.backgroundColor = color;
         }
+
         function changeBoxBackgroundColor(color) {
             document.querySelector('.container').style.backgroundColor = color;
         }
+
+
+        function changeBox(color){
+            document.querySelector('.weather-app').style.backgroundColor = color;
+            document.querySelector('.weather').style.backgroundColor = color;
+        }
+
+
+        function changeButton(color){
+            document.querySelector('.location').style.backgroundColor = color;
+            document.querySelector('.search').style.backgroundColor = color;
+            document.querySelector('.backBtn').style.backgroundColor = color;
+        }
+
+        function change(color){
+
+        }
+
 
         function changeAllBackgrounds(color) {
             changeBackgroundColor(color);
             changeBAckground(color);
             changeBoxBackgroundColor(color);
+            changeBox(color);
+            changeButton(color);
         }
-    </script>
 
+        function processInput() {
+            const inputField = document.getElementById('inputField');
+            const inputValue = inputField.value;
+            inputField.value = ''; 
+        }
+
+        window.onload = function() {
+            document.getElementById('inputField').addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    processInput();
+                }
+            });
+        };
+    </script>
 </head>
 <body>
     <link rel="stylesheet" href="_style.css">
-    <div class="container">
-        <div class="weather-app">
-            <h1><header>WeatherInfo</header></h1>
-            <input type="text" placeholder="Enter the name of the city" spellcheck="false">
-            <p>or</p>
-            <button>Auto Detect Location</button>
+    <div class="show">
+        <div class="container">
+            <div class="weather-app">
+                <h1><header>WeatherInfo</header></h1>
+                <input type="text" placeholder="Enter the name of the city" spellcheck="false" id="inputField">
+                <button class="search"><img src="search.png"></button>
+                <p>or</p>
+                <button class="location">Auto Detect Location</button>
+            </div>
+        </div>
+        <div class="color-palette" style="text-align: right;">
+            <button class="round-button-1" onclick="changeAllBackgrounds('#ff0000')"></button>
+            <button class="round-button-2" onclick="changeAllBackgrounds('#0000ff')"></button>
+            <button class="round-button-3" onclick="changeAllBackgrounds('#00ff00')"></button>
+            <button class="round-button-4" onclick="changeAllBackgrounds('#786')"></button>
+            <button class="round-button-5" onclick="changeAllBackgrounds('#567')"></button>
+            <button class="round-button-6" onclick="changeAllBackgrounds('#000')"></button>
+        </div>
+        <div>
+            <button class="Default-Theme" onclick="changeAllBackgrounds('#4f83cc')"></button>
         </div>
     </div>
-    <div class="color-palette">
-    <font align="right">
-       <button class="round-button-1" onclick="changeAllBackgrounds('#ff0000')"></button>
-       <button class="round-button-2" onclick="changeAllBackgrounds('#0000ff')"></button>
-       <button class="round-button-3" onclick="changeAllBackgrounds('#00ff00')"></button>
-       <button class="round-button-4" onclick="changeAllBackgrounds('#786')"></button>
-       <button class="round-button-5" onclick="changeAllBackgrounds('#567')"></button>
-       <button class="round-button-6" onclick="changeAllBackgrounds('#000')"></button>
-    </font>
+    
+    <div class="weather">
+        <img src="clouds.png" class="weather-icon" height="150" width="150">
+        <img src="bac.png" class="backBtn" height="70" width="70">
+        <h1 class="temp">22°C</h1>
+        <h2 class="city">New York</h2>
+        <div class="details">
+            <div class="col">
+                <img src="humidity.png" >
+                <div>
+                    <p class="humidity">50%</p>
+                    <p>Humidity</p>
+                </div>
+            </div>
+            <div class="col">
+                <img src="wind.png">
+                <div>
+                    <p class="wind">15 kmph</p>
+                    <p>wind spedd</p>
+                </div>
+            </div>
+        </div>
     </div>
-
-
+                      
+    
+        <div class="color-palette" style="text-align: right;">
+            <button class="round-button-1" onclick="changeAllBackgrounds('#ff0000')"></button>
+            <button class="round-button-2" onclick="changeAllBackgrounds('#0000ff')"></button>
+            <button class="round-button-3" onclick="changeAllBackgrounds('#00ff00')"></button>
+            <button class="round-button-4" onclick="changeAllBackgrounds('#786')"></button>
+            <button class="round-button-5" onclick="changeAllBackgrounds('#567')"></button>
+            <button class="round-button-6" onclick="changeAllBackgrounds('#000')"></button>
+        </div>
+        <div>
+            <button class="Default-Theme" onclick="changeAllBackgrounds('#4f83cc')"></button>
+        </div>
+    </div>
+    <script src="__script.js"></script>
 </body>
 </html>
-
-
