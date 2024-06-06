@@ -4,7 +4,7 @@ import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_API_KEY,
+  apiKey: API,
   authDomain: "codiooo.firebaseapp.com",
   projectId: "codiooo",
   storageBucket: "codiooo.appspot.com",
