@@ -5,6 +5,7 @@ const searchBox = document.querySelector(".weather-app input");
 const searchBtn = document.querySelector(".search");
 const weatherIcon = document.querySelector(".weather-icon");
 const backBtn = document.querySelector(".backBtn");
+const locationBtn = document.querySelector(".location");
 
 async function checkWeather(city) {
     try {
@@ -65,3 +66,12 @@ backBtn.addEventListener("click", () => {
     document.querySelector(".weather").style.display = "none";
     document.querySelector(".show").style.display = "block";
 });
+
+function fetchWeatherDataByCoords(lat, lon) {
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`;
+    fetch(url)
+        .then(response => response.json())
+        .then(data => updateWeatherData(data))
+        .catch(error => alert('Unable to retrieve weather data.'));
+}
+

@@ -4,7 +4,7 @@ import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: API,
+  apiKey: process.env.REACT_APP_API_KEY,
   authDomain: "codiooo.firebaseapp.com",
   projectId: "codiooo",
   storageBucket: "codiooo.appspot.com",
